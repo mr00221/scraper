@@ -12,6 +12,7 @@ app = Flask(__name__)
 sending = True
 
 session = None
+
 server_addr = 'http://django-service'
 
 def replace_sumike(bsd):
