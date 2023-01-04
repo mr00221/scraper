@@ -16,9 +16,21 @@ spec:
     spec:
       containers:
       - name: scraper
-        image: scraper:v1
+        image: mr0022/scraper:latest
         ports:
         - containerPort: 5001
+      livenessProbe:
+        httpGet:
+          path: /
+          port: 5001
+        initialDelaySeconds: 10
+        periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5001
+          initialDelaySeconds: 10
+          periodSeconds: 3
 ---
 apiVersion: v1
 kind: Service
