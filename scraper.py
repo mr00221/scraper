@@ -119,6 +119,12 @@ def fast100():
             session.post(url=server_addr + ':8000/app1/avti/', json=jsondata)
             print("Uspesno shranil avto: " + naslov)
         except Exception as e:
+            '''
+            import traceback
+			error_message = "Naslov: " + naslov + "\ncar_id: " + car_id + "\n" + str(traceback.format_exc())
+			b = Bot(token="1024063569:AAFV_fy723VkLlQs8qIacdIggM5CCkTasOo")
+			b.send_message(chat_id=909239721,disable_web_page_preview=False, parse_mode='HTML', text=error_message)
+            '''
             print(e)
 
 
